@@ -122,12 +122,15 @@ public class Shamir {
 					.println("Proper Number of Keys Available! Beginning Calculation.");
 			String value = join(map).toString();
 			System.out.println(value);
-			printString(value);
+			System.out.println(printString(value));
 		} else {
 			System.out.println("Not enough keys available...");
 			System.out.println("Still need "
 					+ (requiredNumber - map.keySet().size()) + " keys");
 		}
+		String value = join(map).toString();
+		System.out.println(value);
+		System.out.println(printString(value));
 	}
 
 	/**
@@ -138,9 +141,10 @@ public class Shamir {
 	 */
 	public static String printString(String number) {
 		String string = "";
-		for (int a = 0; a < number.length(); a += 2)
-			string += Character.toChars(54 + Integer.parseInt(number.substring(
-					a, a + 2))/* % 26 + 11//Enable this if you need to */);
+		for (int a = 0; a < number.length(); a += 2) {
+			string += Character.toLowerCase(Character.toChars(54 + Integer.parseInt(number.substring(
+					a, a + 2))/* % 26 + 11 *//* Enable this if you need to */)[0]);
+		}
 		return string;
 	}
 }

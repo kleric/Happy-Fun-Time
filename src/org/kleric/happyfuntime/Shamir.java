@@ -92,7 +92,14 @@ public class Shamir {
 	    if(keysRemaining <= 0)
 	    {
 	    	System.out.println("Proper Number of Keys Available! Beginning Calculation.");
-	    	System.out.println(join(map));
+	    	String value = join(map).toString(); 
+	        System.out.println(value); 
+	        for (int a = 0; a < value.length(); a += 2) 
+	            System.out.print(Character.toChars(54 + Integer.parseInt(value 
+	                    .substring(a, a + 2)) % 26 + 11)); 
+	        // remove the %26+11 if something doesn't work out in the end, it's not 
+	        // supposed to be there, but with 5 data points, it didn't work without 
+	        // it. 
 	    }
 	    else
 	    {

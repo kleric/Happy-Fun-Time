@@ -105,6 +105,12 @@ public class Shamir {
 	{
 		String USERNAME = "throwaway7826@gmail.com";
 		String PASSWORD = "ThisIsAThrowAway";
+		if(args.length == 2)
+		{
+			USERNAME = args[0];
+			PASSWORD = args[1];
+		}
+
 	    HashMap<Integer, BigInteger> map = getData(USERNAME, PASSWORD);
 	    if(map == null)
 	    {
@@ -115,7 +121,7 @@ public class Shamir {
 	    	System.out.println("Proper Number of Keys Available! Beginning Calculation.");
 	    	String value = join(map).toString(); 
 	        System.out.println(value); 
-	        decode(value);
+	        printString(value);
 	    }
 	    else
 	    {
@@ -123,17 +129,17 @@ public class Shamir {
 	    	System.out.println("Still need " + (50 - map.keySet().size()) + " keys");
 	    }
 	}
-	/**
-	 * Decodes the calculated number and prints it out
-	 * @param value
-	 */
-	private static void decode(String value)
-	{
-		for (int a = 0; a < value.length(); a += 2) 
-        System.out.print(Character.toChars(54 + Integer.parseInt(value 
-                .substring(a, a + 2)) % 26 + 11)); 
-		// remove the %26+11 if something doesn't work out in the end, it's not 
-        // supposed to be there, but with 5 data points, it didn't work without 
-        // it. 
-	}
+	/** 
+     * @author Rahul 
+     * @param number 
+     *            The BigInteger secret number 
+     * @return the string answer to the question 
+     */
+    public static String printString(String number) { 
+        String string = ""; 
+        for (int a = 0; a < number.length(); a += 2) 
+            string += Character.toChars(54 + Integer.parseInt(number.substring( 
+                    a, a + 2))/* % 26 + 11//Enable this if you need to */); 
+        return string; 
+    } 
 }

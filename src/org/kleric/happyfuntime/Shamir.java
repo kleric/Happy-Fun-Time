@@ -16,6 +16,8 @@ public class Shamir {
 
 	public static final String URL = "https://docs.google.com/feeds/download/spreadsheets/Export?key=0AnN-5p9SwIfUdHl4Rl9lRGg5VjRoR1pISVdMLWk5TGc&amp;exportFormat=csv&amp;gid=0";
 	public static final String SPREADSHEET_NAME = "Shamir's Key, 15-151";
+	// The minimum number of keys 
+    private static final int requiredNumber = 50; 
 	private static final BigInteger prime = new BigInteger("5992830235524142758386850633773258681119");
 
 	/** 
@@ -116,7 +118,7 @@ public class Shamir {
 	    {
 	    	System.err.println("Unable to retrieve the data.");
 	    }
-	    else if(map.keySet().size() >= 50)
+	    else if(map.keySet().size() >= requiredNumber)
 	    {
 	    	System.out.println("Proper Number of Keys Available! Beginning Calculation.");
 	    	String value = join(map).toString(); 
@@ -126,7 +128,7 @@ public class Shamir {
 	    else
 	    {
 	    	System.out.println("Not enough keys available...");
-	    	System.out.println("Still need " + (50 - map.keySet().size()) + " keys");
+	    	System.out.println("Still need " + (requiredNumber - map.keySet().size()) + " keys");
 	    }
 	}
 	/** 

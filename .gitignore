@@ -6,3 +6,5 @@
 .settings/org.eclipse.jdt.core.prefs
 
 bin/org/kleric/happyfuntime/Shamir.class
+
+bin/org/kleric/happyfuntime/ShamirSolver.class

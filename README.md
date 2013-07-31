@@ -39,14 +39,14 @@ encode
 ------
 Syntax is:
 
-    encode `a string`
+    encode <a string>
     
 Encodes a string into numbers. Should be alphanumerical and without spaces. Splits up the string into pairs of numbers representing each character.
 decode
 ------
 Syntax is:
 
-    decode 'a number'
+    decode <a number>
 
 Decodes a number into a string. For example, `1819` would decode into `hi`. It splits up the numbers into pairs (e.g. 18 and 19) then turns them into characters based on the 10 being a, 11, being b, etc.
 

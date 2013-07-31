@@ -6,6 +6,8 @@ Shamir's Secret Share Problem Solver. The name is entirely irrelevant. Fetches t
 The Spreadsheet of keys can be found [HERE](https://docs.google.com/a/kleric.org/spreadsheet/ccc?key=0AnN-5p9SwIfUdHl4Rl9lRGg5VjRoR1pISVdMLWk5TGc#gid=0).
 
 - - -
+If you're wondering. There's a billion libraries because I love to read books. 
+- - -
 Rahul has also implemented a "Playground" which allows a multitude of actions.
  - solve
  - fsolve 

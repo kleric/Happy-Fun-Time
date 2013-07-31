@@ -99,6 +99,7 @@ public class ShamirSolver {
                         + " Available! Beginning Calculation."); 
             String value = new Shamir(prime).join(map).toString(); 
             System.out.println(value); 
+            System.out.println(value.length());
             System.out.println(decode(value)); 
         } else { 
             System.out.println("Not enough keys available..."); 
@@ -138,9 +139,9 @@ public class ShamirSolver {
 			} else if (in.matches("split.+")) { 
 				String[] sets = in.substring("split ".length()) 
 						.replaceAll("\\s+", "").split(","); 
-				HashMap<Integer, BigInteger> map = new Shamir(prime).split( 
-						new BigInteger(sets[0]), Integer.parseInt(sets[1]), 
-						Integer.parseInt(sets[2])); 
+				HashMap<Integer, BigInteger> map = new Shamir(new BigInteger(
+						sets[0])).split(new BigInteger(sets[1]),
+						Integer.parseInt(sets[2]), Integer.parseInt(sets[3]));
 				for (int key : map.keySet()) 
 					System.out.println(key + ", " + map.get(key)); 
 			} else if (in.matches("solve")) 
@@ -162,7 +163,7 @@ public class ShamirSolver {
         String string = ""; 
         for (int a = 0; a < number.length(); a += 2) 
             string += Character.toLowerCase(Character.toChars(86 + Integer.parseInt(number.substring( 
-                    a, a + 2))/* % 26 + 11//Enable this if you need to */)[0]); 
+                    a, a + 2))/* % 26 + 11/*Enable this if you need to*/ )[0]); 
 
         return string; 
     } 

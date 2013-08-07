@@ -70,7 +70,7 @@ public class Shamir {
                 denominator = denominator.multiply(big(a - b)).mod(prime); 
             } 
             secret = (prime.add(secret).add(shares.get(a).multiply(numerator) 
-                    .divide(denominator))).mod(prime); 
+                    .multiply(denominator.modInverse(prime)))).mod(prime); 
         } 
         return secret; 
     } 

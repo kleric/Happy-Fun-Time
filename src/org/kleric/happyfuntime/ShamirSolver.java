@@ -162,7 +162,7 @@ public class ShamirSolver {
     public static String decode(String number) { 
         String string = ""; 
         for (int a = 0; a < number.length(); a += 2) 
-            string += Character.toLowerCase(Character.toChars(86 + Integer.parseInt(number.substring( 
+            string += Character.toLowerCase(Character.toChars(87 + Integer.parseInt(number.substring( 
                     a, a + 2))/* % 26 + 11/*Enable this if you need to*/ )[0]); 
 
         return string; 
